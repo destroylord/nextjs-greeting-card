@@ -20,14 +20,15 @@ export default function GallerySection() {
                             className="col-md-4 mb--"
                             data-aos="fade-out">
                             <div className="child">
-                                <img
+                                {/* <img
                                     src={`https://placehold.co/${Math.floor(
                                         Math.random() * 100 + 100
                                     )}x${Math.floor(
                                         Math.random() * 100 + 100
                                     )}?text=Gallery+${index + 1}`}
                                     className=""
-                                />
+                                    key={index}
+                                /> */}
                             </div>
                         </div>
                     ))}
