@@ -8,22 +8,6 @@ export default function ParallaxSection() {
     const [showText, setShowText] = useState(true);
     const [transitioning, setTransitioning] = useState(false); // For handling transitions
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop;
-            document.documentElement.style.setProperty(
-                "--parallax-position",
-                `${scrollTop * 0.5}px`
-            );
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
 
     useEffect(() => {
         const typed = new Typed("#typed-text", {
@@ -47,15 +31,6 @@ export default function ParallaxSection() {
         setTimeout(() => {
             setBackgroundContent("video");
             setShowText(false);
-            setTransitioning(false);
-        }, 500); // Adjust based on CSS transition duration
-    };
-
-    const handleCloseVideo = () => {
-        setTransitioning(true);
-        setTimeout(() => {
-            setBackgroundContent("image");
-            setShowText(true);
             setTransitioning(false);
         }, 500); // Adjust based on CSS transition duration
     };
@@ -88,12 +63,6 @@ export default function ParallaxSection() {
                             controls
                             autoPlay
                             className="video-element"></video>
-                        <button
-                            className="btn-close-video"
-                            onClick={handleCloseVideo}
-                            aria-label="Close Video">
-                            ✖
-                        </button>
                     </div>
                 )}
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Masonry from "masonry-layout";
+import Image from "next/image";
 
 export default function GallerySection() {
     const [images, setImages] = useState([]);
@@ -49,9 +50,8 @@ export default function GallerySection() {
                         data-aos-delay={index * 100}>
                         <div className="">
                             <img
-                                src={image.url}
-                                style={{ borderRadius: "5px" }}
-                                alt={image.title}
+                                src={image?.url}
+                                alt={image?.title || "Default Image"}
                                 className="img-fluid"
                             />
                         </div>
