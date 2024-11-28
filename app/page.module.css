@@ -90,82 +90,16 @@
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Gallery */
-.gallery-section {
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 15px;
-    max-width: 1200px;
-}
-
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fill,
-        minmax(200px, 1fr)
-    ); /* Kolom fleksibel */
-    gap: 10px;
-    /* grid-auto-rows: "masony"; */
+    grid-template-columns: repeat(3, 1fr)
+    gap: 10px; /* Jarak antar gambar */
+    padding: 10px; /* Padding di sekeliling galeri */
 }
 
-.gallery-item {
-    border-radius: 8px;
-    overflow: hidden;
-    transform: translateY(0);
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease-in-out;
-    /* Rasio tinggi item dihitung dari gambar */
-    grid-row: span 30; /* Default grid span untuk elemen */
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-item img {
+.grid-item img {
     width: 100%;
     height: auto;
-    display: block;
-}
-
-.card img {
-    margin: 5px; /* Atur jarak antar gambar */
-    border-radius: 8px; /* Opsional: Tambahkan sudut melengkung */
-    transition: transform 0.3s ease-in-out; /* Opsional: Efek hover */
-}
-
-.card img:hover {
-    transform: scale(1.05); /* Membesarkan gambar saat dihover */
-}
-
-.superwrap {
-    display: flex;
-    align-items: start;
-}
-
-.wrap {
-    margin-right: 10px;
-    width: 20%;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    outline: 1px solid lime;
-}
-
-.wrap:last-child {
-    margin-right: 0;
-}
-
-.child {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: tomato;
-    outline: 1px solid skyblue;
-    box-sizing: border-box;
-    vertical-align: top;
-}
-
-.child:last-child {
-    margin-bottom: 0;
+    border-radius: 5px; /* Opsional: sudut melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opsional: efek bayangan */
 }
