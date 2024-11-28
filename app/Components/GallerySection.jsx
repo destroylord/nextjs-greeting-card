@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Masonry from "masonry-layout";
-import Image from "next/image";
 
 export default function GallerySection() {
     const [images, setImages] = useState([]);
