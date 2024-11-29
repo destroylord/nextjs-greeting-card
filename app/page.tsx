@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import ParallaxSection from "./Components/ParallaxSection";
 
 const DynamicComponentWithNoSSR = dynamic(
-    () => import("./components/GallerySection"),
+    () => import("../app/Components/GallerySection"),
     {
         ssr: false,
     }
