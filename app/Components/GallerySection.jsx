@@ -25,7 +25,8 @@ const GallerySection = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_BASE_URL}/images.json`
+                    // `${process.env.NEXT_PUBLIC_BASE_URL}/images.json`
+                    '/images.json'
                 );
                 const data = await response.json();
                 setImages(data);
