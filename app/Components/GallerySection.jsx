@@ -1,13 +1,11 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Masonry from "masonry-layout";
 
-export default function GallerySection() {
-    const [images, setImages] = useState([]);
+const GallerySection = () => {
     const grid = useRef(null);
+    const [images, setImages] = useState([]);
 
     useEffect(() => {
         AOS.init({
@@ -26,7 +24,9 @@ export default function GallerySection() {
 
         const fetchData = async () => {
             try {
-                const response = await fetch("/images.json");
+                const response = await fetch(
+                    `${process.env.NEXT_PUBLIC_BASE_URL}/images.json`
+                );
                 const data = await response.json();
                 setImages(data);
             } catch (error) {
@@ -50,6 +50,7 @@ export default function GallerySection() {
                         <div className="">
                             <img
                                 src={image?.url}
+                                style={{ borderRadius: "5px" }}
                                 alt={image?.title || "Default Image"}
                                 className="img-fluid"
                             />
@@ -59,4 +60,6 @@ export default function GallerySection() {
             </div>
         </div>
     );
-}
+};
+
+export default GallerySection;
