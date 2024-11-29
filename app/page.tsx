@@ -5,7 +5,7 @@ import ParallaxSection from "./Components/ParallaxSection";
 const DynamicComponentWithNoSSR = dynamic(
     () => import("./components/GallerySection"),
     {
-        ssr: false, // Disable SSR untuk komponen GallerySection
+        ssr: false,
     }
 );
 
