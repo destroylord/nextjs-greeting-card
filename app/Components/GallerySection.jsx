@@ -25,8 +25,8 @@ const GallerySection = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_BASE_URL}/images.json`
-                    // "https://www.hbd-riska.web.id/images.json"
+                    // `${process.env.NEXT_PUBLIC_BASE_URL}/images.json`
+                    "https://www.hbd-riska.web.id/images.json"
                 );
                 const data = await response.json();
                 setImages(data);

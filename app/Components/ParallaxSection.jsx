@@ -8,7 +8,6 @@ export default function ParallaxSection() {
     const [showText, setShowText] = useState(true);
     const [transitioning, setTransitioning] = useState(false); // For handling transitions
 
-
     useEffect(() => {
         const typed = new Typed("#typed-text", {
             strings: [
@@ -60,9 +59,11 @@ export default function ParallaxSection() {
                         }`}>
                         <video
                             src="otw.mp4"
-                            controls
+                            className="video-element"
+                            loop
+                            muted
                             autoPlay
-                            className="video-element"></video>
+                            playsInline></video>
                     </div>
                 )}
 
