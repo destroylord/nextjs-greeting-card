@@ -57,12 +57,8 @@ export default function ParallaxSection() {
                         className={`video-container ${
                             transitioning ? "fade-out" : "fade-in"
                         }`}>
-                        <video
-                            className="video-element"
-                            loop
-                            autoPlay
-                            playsInline>
-                            <source src="otw.mp4" type="video/mp4" />
+                        <video className="video-element" loop autoPlay>
+                            <source src="Done-bypass.mp4" type="video/mp4" />
                         </video>
                     </div>
                 )}
