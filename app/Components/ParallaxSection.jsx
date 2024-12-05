@@ -62,7 +62,7 @@ export default function ParallaxSection() {
                             loop
                             autoPlay
                             playsInline>
-                            <source src="otw.mp4" type="video/mp4" />
+                            <source src="the-end.mp4" type="video/mp4" />
                         </video>
                     </div>
                 )}
