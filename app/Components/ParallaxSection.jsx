@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Typed from "typed.js";
 
 export default function ParallaxSection() {
-    const [backgroundContent, setBackgroundContent] = useState("image"); // "image" or "video"
+    const [backgroundContent, setBackgroundContent] = useState("image");
     const [showText, setShowText] = useState(true);
-    const [transitioning, setTransitioning] = useState(false); // For handling transitions
+    const [transitioning, setTransitioning] = useState(false);
+    const videoRef = useRef(null);
 
     useEffect(() => {
         const typed = new Typed("#typed-text", {
@@ -25,18 +26,26 @@ export default function ParallaxSection() {
         };
     }, []);
 
+    // Tambahkan useEffect untuk menangani video
+    useEffect(() => {
+        if (backgroundContent === "video" && videoRef.current) {
+            videoRef.current.play().catch((error) => {
+                console.error("Error playing video:", error);
+            });
+        }
+    }, [backgroundContent]);
+
     const handleVideoClick = () => {
         setTransitioning(true);
         setTimeout(() => {
             setBackgroundContent("video");
             setShowText(false);
             setTransitioning(false);
-        }, 500); // Adjust based on CSS transition duration
+        }, 500);
     };
 
     return (
         <div>
-            {/* Parallax Section */}
             <div
                 className={`parallax-section d-flex flex-column justify-content-center align-items-center text-white ${
                     transitioning ? "transitioning" : ""
@@ -44,7 +53,7 @@ export default function ParallaxSection() {
                 style={{
                     backgroundImage:
                         backgroundContent === "image"
-                            ? "url('moment.png')"
+                            ? "url('/moment.png')" // Tambahkan '/' di depan nama file
                             : "none",
                     backgroundAttachment: "fixed",
                     backgroundPosition: "center var(--parallax-position)",
@@ -57,8 +66,30 @@ export default function ParallaxSection() {
                         className={`video-container ${
                             transitioning ? "fade-out" : "fade-in"
                         }`}>
-                        <video className="video-element" loop autoPlay>
-                            <source src="Done-bypass.mp4" type="video/mp4" />
+                        <video
+                            ref={videoRef}
+                            className="video-element"
+                            loop
+                            playsInline
+                            onError={(e) => {
+                                console.error("Video Error Details:", e);
+                                console.log(
+                                    "Error Source:",
+                                    e.target.currentSrc
+                                );
+                                console.log(
+                                    "Network State:",
+                                    e.target.networkState
+                                );
+                            }} // Tambahkan atribut ini untuk mobile
+                        >
+                            <source
+                                src="/otw.mp4"
+                                type="video/mp4"
+                                onError={(e) =>
+                                    console.error("Source Error", e)
+                                }
+                            />{" "}
                         </video>
                     </div>
                 )}
