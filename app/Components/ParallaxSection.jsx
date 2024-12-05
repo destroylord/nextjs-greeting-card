@@ -60,7 +60,6 @@ export default function ParallaxSection() {
                         <video
                             className="video-element"
                             loop
-                            muted
                             autoPlay
                             playsInline>
                             <source src="otw.mp4" type="video/mp4" />
