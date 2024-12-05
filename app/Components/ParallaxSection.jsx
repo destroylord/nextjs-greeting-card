@@ -59,7 +59,7 @@ export default function ParallaxSection() {
                             transitioning ? "fade-out" : "fade-in"
                         }`}>
                         <video
-                            src="project-1-1.mp4"
+                            src="otw.mp4"
                             controls
                             autoPlay
                             className="video-element"></video>
