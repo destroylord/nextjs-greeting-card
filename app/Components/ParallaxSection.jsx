@@ -12,9 +12,9 @@ export default function ParallaxSection() {
     useEffect(() => {
         const typed = new Typed("#typed-text", {
             strings: [
-                "Selamat Ulang Tahun 🎉",
-                "Semoga Hari Ini Spesial 😊",
-                "Nikmati Momen yang Indah ❤️",
+                "Selamat Ulang Tahun Cantikk🎉",
+                "Aku gak cuman bisa kasih ini aja yaaa 😊",
+                "Lihat nih aku bikin apa, coba diklik tuh tombol videonya jangan sampe nangis yaaa ❤️❤️❤️❤️",
             ],
             typeSpeed: 50,
             backSpeed: 30,
@@ -59,7 +59,7 @@ export default function ParallaxSection() {
                             transitioning ? "fade-out" : "fade-in"
                         }`}>
                         <video
-                            src="testingVideo.mp4"
+                            src="project-1-1.mp4"
                             controls
                             autoPlay
                             className="video-element"></video>
