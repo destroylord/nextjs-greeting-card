@@ -58,12 +58,13 @@ export default function ParallaxSection() {
                             transitioning ? "fade-out" : "fade-in"
                         }`}>
                         <video
-                            src="otw.mp4"
                             className="video-element"
                             loop
                             muted
                             autoPlay
-                            playsInline></video>
+                            playsInline>
+                            <source src="otw.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 )}
 
